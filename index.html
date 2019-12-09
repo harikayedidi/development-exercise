@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Lucid Landing Page</title>
+</head>
+<link rel="stylesheet" type="text/css" href="css/style.min.css">
+<body>
+    <div class="header">
+        <div class="header-logo">
+            <img src="images/lucid-logo.svg" alt="Lucid Motors logo">
+        </div>
+    </div>
+    <section class="hero">
+        <h1 class="container fadeIn">The Future of Luxury Mobility</h1>
+    </section>
+    <section class="container">
+        <div class="row">
+            <div class="column-60 border-right">
+                <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla tincidunt a
+                    ccumsan odio, sed pulvinar lacus ullamcorper sit amet. Pellentesque aliquet leo ac mi lacinia condimentum. Ut ut consectetur mauris, sed mollis leo. Nulla facilisi. Ut nec pharetra metus. Maecenas vitae lorem tempor, auctor sapien sed, faucibus velit.</p>
+                <br />
+                <p>Phasellus non libero mauris. Proin vel ante volutpat, bibendum leo a, consequat purus. Mauris nulla enim, pretium quis diam vel, imperdiet posuere odio. Duis eleifend vel sapien ac viverra. Fusce tincidunt, sem vitae feugiat rutrum, elit purus porta lacus, ac lobortis ligula justo sed quam. Integer vulputate lorem sed sapien ultricies feugiat sit amet et tur.</p>
+            </div>
+            <div class="column-40">
+                <h4 id="form-title">Morbi ac est urna</h4>
+                <form id="contact-form">
+                    <ul>
+                        <li>
+                            <label for="first-name">First Name</label>
+                            <input type="text" id="first-name" required>
+                        </li>
+                        <li>
+                            <label for="last-name">Last Name</label>
+                            <input type="text" id="last-name" required>
+                        </li>
+                        <li>
+                            <label for="email">Email</label>
+                            <input type="email" id="email" required>
+                        </li>
+                        <li>
+                            <label for="country">Country</label>
+                            <div class="custom-select"> <select id="countries" required>
+                                    <option></option>
+                                </select>
+                            </div>
+                        </li>
+                    </ul>
+                    <button class="signup-btn" type="submit">Sign me up</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <section class="container">
+            <div class="row">
+                <div class="column-60">
+                    <svg class="footer-logo" viewBox="0 0 290 17" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <path fill-rule="evenodd" d="M51.721 13.774H11.454c-3.605 0-5.208-1.622-5.208-5.105V.896H0v7.773c0 5.031 4.36 7.802 8.521 7.802h43.2v-2.697zM116.716.896v12.878H79.905c-3.605 0-5.208-1.622-5.208-5.105V.896h-6.248v7.773c0 5.031 4.36 7.802 8.523 7.802h45.992V.896h-6.248zm76.955 12.878h-42.45c-3.605 0-5.208-1.622-5.208-5.105 0-3.51 1.603-5.076 5.208-5.076h42.45V.896h-45.383c-4.162 0-8.523 2.76-8.523 7.773 0 5.031 4.36 7.802 8.523 7.802h45.383v-2.697zM281.478.896c4.16 0 8.522 2.76 8.522 7.773 0 5.031-4.361 7.802-8.522 7.802h-46.61V.896h46.61zm2.275 7.773c0-3.51-1.603-5.076-5.208-5.076h-37.43v10.18h37.43c3.605 0 5.208-1.621 5.208-5.104zm-72.529 8.225h6.082V.5h-6.082v16.394z"></path>
+                    </svg>
+                    <br>
+                    <div class="small">7373 Gateway Boulevard, Newark, CA 94560 USA &nbsp;|&nbsp; +1 510 648 3553</div>
+                </div>
+            </div>
+            <div class="row small copy">
+                <div class="column">
+                    <p>Copyright ©<span id="curyear">2019</span> Lucid Motors, Inc.</p>
+                </div>
+                <div class="column-right"><a href="">Privacy</a>&nbsp; | &nbsp;<a href="">Terms of Use</a></div>
+            </div>
+        </section>
+    </footer>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/countries.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $.each(countriesjson, function(index, value) {
+            $("#countries").append('<option value="' + value.code + '">' + value.name + '</option>');
+        });
+        $("#contact-form").submit(function(e) {
+            e.preventDefault();
+            $(this).fadeOut();
+            $("#form-title").text("Thank you. We will be in touch shortly.").fadeIn();
+        });
+    });
+    </script>
+</body>
+
+</html>
