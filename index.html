@@ -65,7 +65,7 @@
             </div>
             <div class="row small copy">
                 <div class="column">
-                    <p>Copyright ©<span id="curyear">2019</span> Lucid Motors, Inc.</p>
+                    <p>Copyright © <span id="curyear"></span> Lucid Motors, Inc.</p>
                 </div>
                 <div class="column-right"><a href="">Privacy</a>&nbsp; | &nbsp;<a href="">Terms of Use</a></div>
             </div>
@@ -78,6 +78,7 @@
         $.each(countriesjson, function(index, value) {
             $("#countries").append('<option value="' + value.code + '">' + value.name + '</option>');
         });
+        $("#curyear").html(new Date().getFullYear());
         $("#contact-form").submit(function(e) {
             e.preventDefault();
             $(this).fadeOut();
